@@ -24,13 +24,18 @@ function AddTrip() {
 
   const addTrip = () => {
     const tripId = crypto.randomUUID();
-    tripsCollection.doc(tripId).insert({
-      id: tripId,
-      country,
-      startDate: new Date(startDate),
-      endDate: new Date(endDate),
-      notes: [],
-    });
+    try {
+      tripsCollection.doc(tripId).insert({
+        id: tripId,
+        country,
+        startDate: new Date(startDate),
+        endDate: new Date(endDate),
+        notes: [],
+      });
+      // Optionally reset form state here
+    } catch (error) {
+      console.error('Error adding trip:', error);
+    }
   };
 
   return (
