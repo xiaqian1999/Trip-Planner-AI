@@ -1,7 +1,6 @@
 import { format } from 'date-fns';
 import { Trip } from '../types';
 import { useState } from 'react';
-import './Trip.css';
 
 type Props = {
   trip: Trip;

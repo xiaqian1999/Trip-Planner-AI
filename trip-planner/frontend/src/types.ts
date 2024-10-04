@@ -1,7 +1,7 @@
-export type Trip = {
-  startDate: Date
-  endDate: Date
+export interface Trip {
+  startDate: Date;
+  endDate: Date;
   country: string;
-  notes: string[];
-  id: string
+  notes: [];
+  id: string;
 }
